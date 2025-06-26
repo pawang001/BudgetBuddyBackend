@@ -1,6 +1,6 @@
 # 💻 Budget Buddy - Backend
 
-**Budget Buddy** is a powerful Spring Boot backend for the personal finance management web app — [**Budget Buddy Frontend**](https://github.com/pawang001/BudgetBuddyFrontend). It provides a secure and efficient REST API for handling authentication, transactions, and user data, integrated with a MySQL database and supporting OAuth2 login.
+**Budget Buddy** is a powerful Spring Boot backend for the personal finance management web app — [**Budget Buddy Frontend**](https://github.com/pawang001/Budget-Buddy-Frontend). It provides a secure and efficient REST API for handling authentication, transactions, and user data, integrated with a MySQL database and supporting OAuth2 login.
 
 ---
 
