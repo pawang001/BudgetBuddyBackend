@@ -14,5 +14,5 @@ public class TransactionResponse {
     private double amount;
     private TransactionType type;
     private String category;
-    private LocalDateTime date;
+    private LocalDateTime dateTime;
 }

@@ -22,6 +22,12 @@ public class TransactionController {
         return ResponseEntity.ok(transactionService.createTransaction(request));
     }
 
+    @PostMapping("/addAll")
+    public ResponseEntity<List<TransactionResponse>> addAll(@RequestBody List<TransactionRequest> requests) {
+        return ResponseEntity.ok(transactionService.createMultipleTransactions(requests));
+    }
+
+
     @GetMapping("/getAll")
     public ResponseEntity<List<TransactionResponse>> getAll() {
         return ResponseEntity.ok(transactionService.getAllTransactions());
@@ -30,6 +36,11 @@ public class TransactionController {
     @DeleteMapping("/delete/{id}")
     public  ResponseEntity<String> delete(@PathVariable Long id) {
         return ResponseEntity.ok(transactionService.deleteTransaction(id));
+    }
+
+    @DeleteMapping("/deleteSelected")
+    public ResponseEntity<String> deleteAll(@PathVariable List<Long> ids) {
+        return ResponseEntity.ok(transactionService.deleteSelectedTransactions(ids));
     }
 
     @PutMapping("/update/{id}")

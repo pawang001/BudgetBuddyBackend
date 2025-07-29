@@ -31,7 +31,7 @@ public class TransactionService {
         transaction.setAmount(request.getAmount());
         transaction.setCategory(request.getCategory());
         transaction.setType(request.getType());
-        transaction.setDateTime(LocalDateTime.now());
+        transaction.setDateTime(request.getDateTime() != null ? request.getDateTime() : LocalDateTime.now());
         transaction.setUser(user);
 
         Transaction saved = repo.save(transaction);
@@ -56,7 +56,7 @@ public class TransactionService {
         Transaction transaction = repo.findById(id).orElseThrow(() ->
                 new RuntimeException("Transaction not found."));
 
-        if(!transaction.getUser().getId().equals(user.getId())) {
+        if (!transaction.getUser().getId().equals(user.getId())) {
             throw new RuntimeException("Unauthorized to delete this transaction");
         }
         repo.delete(transaction);
@@ -64,14 +64,13 @@ public class TransactionService {
         return "Transaction deleted successfully";
     }
 
-
     public Transaction updateTransaction(Long id, Transaction updatedTransaction) {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
         User user = userRepo.findByEmail(email).orElseThrow();
         Transaction existing = repo.findById(id).orElseThrow(() ->
                 new RuntimeException("Transaction not found."));
 
-        if(!existing.getUser().getId().equals(user.getId())) {
+        if (!existing.getUser().getId().equals(user.getId())) {
             throw new RuntimeException("Unauthorized to update this transaction");
         }
 
@@ -79,9 +78,43 @@ public class TransactionService {
         existing.setType(updatedTransaction.getType());
         existing.setCategory(updatedTransaction.getCategory());
         existing.setTitle(updatedTransaction.getTitle());
-        existing.setDateTime(LocalDateTime.now());
+        existing.setDateTime(updatedTransaction.getDateTime() != null ? updatedTransaction.getDateTime() : LocalDateTime.now());
 
         return repo.save(existing);
     }
 
+    public List<TransactionResponse> createMultipleTransactions(List<TransactionRequest> requests) {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepo.findByEmail(email).orElseThrow();
+
+        List<Transaction> txList = requests.stream().map(req -> {
+            Transaction tx = new Transaction();
+            tx.setTitle(req.getTitle());
+            tx.setType(req.getType());
+            tx.setCategory(req.getCategory());
+            tx.setAmount(req.getAmount());
+            tx.setDateTime(req.getDateTime() != null ? req.getDateTime() : LocalDateTime.now());
+            tx.setUser(user);
+            return tx;
+        }).collect(Collectors.toList());
+
+        List<Transaction> savedTxs = repo.saveAll(txList);
+
+        return savedTxs.stream().map(t -> new TransactionResponse(t.getId(), t.getTitle(), t.getAmount(),
+                t.getType(), t.getCategory(), t.getDateTime())).collect(Collectors.toList());
+    }
+
+    public String deleteSelectedTransactions(List<Long> ids) {
+        String email = SecurityContextHolder.getContext().getAuthentication().getName();
+        User user = userRepo.findByEmail(email).orElseThrow();
+
+        List<Transaction> transactions = repo.findAllById(ids);
+        transactions = transactions.stream()
+                .filter(tx -> tx.getUser().getId().equals(user.getId()))
+                .collect(Collectors.toList());
+
+        repo.deleteAll(transactions);
+
+        return "Selected transactions deleted successfully";
+    }
 }
