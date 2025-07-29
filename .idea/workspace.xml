@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="561d72ba-5c3b-4893-9cbe-27eba2128f9d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/controller/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/TransactionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/TransactionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/TransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/TransactionResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/dto/UserResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/service/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/budget_buddy/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/budget_buddy/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budget_buddy/dto/UserResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budget_buddy/dto/UserResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/budget_buddy/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/budget_buddy/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Pawan/Documents/GitHub/Budget Buddy/BudgetBuddyBackend&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "feature",
+    "last_opened_file_path": "D:/Majdoori/GitHub/Budget Buddy/BudgetBuddyBackend",
+    "settings.editor.selected.configurable": "editor.preferences.appearance"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="BudgetBuddyBackend" />
